@@ -20,8 +20,6 @@ class TTDashboardVC: UIViewController {
     private let loginVM = TTLoginVM()
     private var refreshControl = UIRefreshControl()
     
-    private var activityIndicatorView: ActivityIndicatorView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,17 +32,6 @@ class TTDashboardVC: UIViewController {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTapProfilePic(_:)))
         profileImageView.addGestureRecognizer(tap)
-    }
-    
-    private func setupPullToRefresh(){
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-        tblView.addSubview(refreshControl) // not required when using UITableViewController
-    }
-    
-    @objc func refresh(_ sender: AnyObject) {
-        refreshControl.endRefreshing()
-        getData()
     }
     
     @objc func handleTapProfilePic(_ sender: UITapGestureRecognizer? = nil) {
@@ -61,11 +48,18 @@ class TTDashboardVC: UIViewController {
             }
         }
     }
-
-    private func setupIndicator(){
-        self.activityIndicatorView = ActivityIndicatorView(title: "Processing...", center: self.view.center)
-        self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
+    
+    private func setupPullToRefresh(){
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tblView.addSubview(refreshControl) // not required when using UITableViewController
     }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        refreshControl.endRefreshing()
+        getData()
+    }
+    
     
     private func setupCollectionView(){
         clcView.dataSource = self.collectionViewDataSource
@@ -84,7 +78,6 @@ class TTDashboardVC: UIViewController {
         }else{
             profileImageView.downloaded(from: avater)
         }
-
     }
     
     lazy var collectionViewFlowLayout : CalendarCollectionViewFlowLayout = {
@@ -112,15 +105,7 @@ class TTDashboardVC: UIViewController {
     }()
     
     private func getData(){
-        setupIndicator()
-        self.activityIndicatorView.startAnimating()
-        self.view.isUserInteractionEnabled = false
-        
         viewModel.getEventList {[weak self] (success) in
-            
-            self?.activityIndicatorView.stopAnimating()
-            self?.view.isUserInteractionEnabled = true
-            
             if success{
                 if self?.viewModel.getEventList()?.count == 0{
                     self?.getDefaultData()
@@ -133,14 +118,9 @@ class TTDashboardVC: UIViewController {
     
     private func getDefaultData(){
         // MARK:- default data
-        self.activityIndicatorView.startAnimating()
-        self.view.isUserInteractionEnabled = false
-        Helper.saveData(data: "1", key: Constants.ttUserID)
         
+        Helper.saveData(data: "1", key: Constants.ttUserID)
         viewModel.getEventList {[weak self] (success) in
-            self?.activityIndicatorView.stopAnimating()
-            self?.view.isUserInteractionEnabled = true
-            
             if success{
                 self?.tblView.reloadData()
             }
@@ -159,12 +139,12 @@ extension TTDashboardVC: UITableViewDataSource, UITableViewDelegate{
         }else{
             tableView.backgroundView = nil
         }
-
+        
         return viewModel.getEventList()?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         if viewModel.getEventType(index: indexPath.row) == "Blank"{
             let blankCell = tableView.dequeueReusableCell(withIdentifier: TTBlankEventCell.identifire, for: indexPath) as! TTBlankEventCell
             blankCell.selectionStyle = .none

@@ -1,0 +1,6 @@
+framework module Pods_TamoTask {
+  umbrella header "Pods-TamoTask-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -15,15 +15,11 @@ class TTEventDetailsVC: UIViewController {
     @IBOutlet weak private var eventAddressLbl: UILabel!
     @IBOutlet weak private var eventSubjctLbl: UILabel!
     @IBOutlet weak private var eventTypeLbl: UILabel!
-    private var activityIndicatorView: ActivityIndicatorView!
-    private var refreshControl = UIRefreshControl()
-
     
     var viewModel: TTDashboardVM?
     var eventId = "1"
     var selectedIndex = 0
-    
-
+    private var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,23 +28,6 @@ class TTEventDetailsVC: UIViewController {
         setupPullToRefresh()
         setData()
         getData()
-    }
-    
-    private func setupPullToRefresh(){
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-        tblView.addSubview(refreshControl) // not required when using UITableViewController
-    }
-    
-    @objc func refresh(_ sender: AnyObject) {
-        refreshControl.endRefreshing()
-        getData()
-    }
-
-    
-    private func setupIndicator(){
-        self.activityIndicatorView = ActivityIndicatorView(title: "Processing...", center: self.view.center)
-        self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
     }
     
     private func setData(){
@@ -66,16 +45,23 @@ class TTEventDetailsVC: UIViewController {
     
     private func getData(){
         guard let vm = viewModel else {return}
-        setupIndicator()
-        self.activityIndicatorView.startAnimating()
-        self.view.isUserInteractionEnabled = false
+        
         vm.getEventDetails(eventId: eventId) {[weak self] (success) in
-            self?.activityIndicatorView.stopAnimating()
-            self?.view.isUserInteractionEnabled = true
             if success{
                 self?.tblView.reloadData()
             }
         }
+    }
+    
+    private func setupPullToRefresh(){
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tblView.addSubview(refreshControl) // not required when using UITableViewController
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        refreshControl.endRefreshing()
+        getData()
     }
 }
 

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import UIKit
+import SVProgressHUD
 
 class TTDashboardVM{
     
@@ -15,19 +15,17 @@ class TTDashboardVM{
     private var eventDetailsList: [EventDetailsResponse]?
     
     func getEventList(completion: @escaping (_ success: Bool) -> Void){
-
+        SVProgressHUD.show()
         let id = Helper.getStringData(key: Constants.ttUserID)
-        
-        let url = KBasePath + OauthPath.signin.rawValue + "/\(id)/events"
-        APIClient.shared.objectAPICall(url: url, modelType: [EventResponse].self, method: .get, parameters: [String: Any]()) { (response) in
+        APIClient.shared.objectAPICall(apiEndPoint: LoginEndPoint.eventList(id: id), modelType: [EventResponse].self) { (response) in
             switch response {
             case .success(let value):
-                
+                SVProgressHUD.dismiss()
                 self.eventList = value
                 self.filteredEvent(date: Date())
                 completion(true)
             case .failure((let code, let data, let err)):
-
+                SVProgressHUD.dismiss()
                 DLog("code = \(code)")
                 DLog("data = \(String(describing: data))")
                 DLog("error = \(err.localizedDescription)")
@@ -35,17 +33,18 @@ class TTDashboardVM{
             }
         }
     }
-
+    
     func getEventDetails(eventId: String, completion: @escaping (_ success: Bool) -> Void){
+        SVProgressHUD.show()
         let id = Helper.getStringData(key: Constants.ttUserID)
-        let url = KBasePath + OauthPath.signin.rawValue + "/\(id)/events/\(eventId)/event"
-        
-        APIClient.shared.objectAPICall(url: url, modelType: [EventDetailsResponse].self, method: .get, parameters: [String: Any]()) { (response) in
+        APIClient.shared.objectAPICall(apiEndPoint: LoginEndPoint.eventDetails(id: id, eventId: eventId), modelType: [EventDetailsResponse].self) { (response) in
             switch response {
             case .success(let value):
+                SVProgressHUD.dismiss()
                 self.eventDetailsList = value
                 completion(true)
             case .failure((let code, let data, let err)):
+                SVProgressHUD.dismiss()
                 DLog("code = \(code)")
                 DLog("data = \(String(describing: data))")
                 DLog("error = \(err.localizedDescription)")

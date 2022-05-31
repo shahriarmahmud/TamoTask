@@ -6,18 +6,20 @@
 //
 
 import Foundation
-
+import SVProgressHUD
 
 class TTLoginVM{
     
     func makeLogin(email: String, password: String, completion: @escaping (_ success: Bool) -> Void){
-        let url = KBasePath + OauthPath.signin.rawValue
-        APIClient.shared.objectAPICall(url: url, modelType: LoginResponse.self, method: .post, parameters: ["email": email, "password": password]) { (response) in
+        SVProgressHUD.show()
+        APIClient.shared.objectAPICall(apiEndPoint: LoginEndPoint.login(email: email, password: password), modelType: LoginResponse.self) { (response) in
             switch response {
             case .success(let value):
+                SVProgressHUD.dismiss()
                 self.saveData(result: value, password: password)
                 completion(true)
             case .failure((let code, let data, let err)):
+                SVProgressHUD.dismiss()
                 DLog("code = \(code)")
                 DLog("data = \(String(describing: data))")
                 DLog("error = \(err.localizedDescription)")

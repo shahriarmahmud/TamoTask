@@ -33,7 +33,7 @@ struct Helper{
         let lblNameInitialize = UILabel()
         lblNameInitialize.frame.size = CGSize(width: Constants.profileImageWidthHeight, height: Constants.profileImageWidthHeight)
         lblNameInitialize.textColor = UIColor.white
-        let fName = Helper.getStringData(key: Constants.ttFName).isEmpty ? Constants.defaultUserFName: Helper.getStringData(key: Constants.ttFName)
+        let fName = Helper.getStringData(key: Constants.ttFName).isEmpty ? Constants.defaultUserFName : Helper.getStringData(key: Constants.ttFName)
         let lName = Helper.getStringData(key: Constants.ttLName).isEmpty ? Constants.defaultUserLName : Helper.getStringData(key: Constants.ttLName)
         guard let fFirstCharecter = fName.first else {return UIImage()}
         guard let lFirstCharecter = lName.first else {return UIImage()}
@@ -191,4 +191,5 @@ struct Helper{
         
         RootVCHelper.setToLoginVC()
     }
+
 }

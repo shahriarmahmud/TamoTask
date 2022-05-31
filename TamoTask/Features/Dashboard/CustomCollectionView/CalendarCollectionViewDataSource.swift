@@ -18,7 +18,7 @@ class CalendarCollectionViewDataSource : NSObject, UICollectionViewDataSource {
         self.monthLbl = monthLbl
 		self.calendarRange = calendarRange
 	}
-    
+
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return calendarRange.count
 	}
@@ -26,6 +26,7 @@ class CalendarCollectionViewDataSource : NSObject, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return calendarRange[section].daysInMonth
 	}
+
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let section = calendarRange[indexPath.section]

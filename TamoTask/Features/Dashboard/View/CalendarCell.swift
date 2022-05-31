@@ -20,7 +20,7 @@ class CalendarCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
         style()
     }
     
@@ -37,7 +37,6 @@ class CalendarCell: UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? CalendarCell ?? CalendarCell()
         cell.isUserInteractionEnabled = true
-        
         if indexPath.row == 0 && indexPath.section == 0{
             cell.initialView(cell: cell)
         }else{
@@ -52,6 +51,8 @@ class CalendarCell: UICollectionViewCell {
         
         let daysInSection = data.daysInMonth
         let day = daysInSection - indexPath.item
+        
+        
         let dateStr = "\(day)-\(data.month)-\(data.year)"
         
         cell.fullDataLbl.text = dateStr

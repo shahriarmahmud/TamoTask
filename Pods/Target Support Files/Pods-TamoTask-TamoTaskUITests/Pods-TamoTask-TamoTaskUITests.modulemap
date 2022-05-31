@@ -1,0 +1,6 @@
+framework module Pods_TamoTask_TamoTaskUITests {
+  umbrella header "Pods-TamoTask-TamoTaskUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

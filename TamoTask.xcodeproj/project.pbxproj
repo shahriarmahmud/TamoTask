@@ -3,16 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0C556F922598A51D13A339 /* Pods_TamoTask_TamoTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952904B2B976181340969036 /* Pods_TamoTask_TamoTaskUITests.framework */; };
+		33B3F46919F896DDFC1ECF57 /* Pods_TamoTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6892E49FD79A4E000EA7C4 /* Pods_TamoTaskTests.framework */; };
+		72B8C2C62458980445B01377 /* Pods_TamoTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A8289347C4523744862DF6 /* Pods_TamoTask.framework */; };
 		F82744C325E938E100C45053 /* DashedLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82744C225E938E100C45053 /* DashedLineView.swift */; };
 		F82744C825E93E0A00C45053 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82744C725E93E0A00C45053 /* Colors.xcassets */; };
 		F82744CD25E9835D00C45053 /* TTBlankEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82744CC25E9835D00C45053 /* TTBlankEventCell.swift */; };
-		F83D646A25EAA73B00518F8B /* UIImageView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83D646925EAA73B00518F8B /* UIImageView+Helper.swift */; };
-		F86F9DFC2845C207002E181C /* InternetConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86F9DFB2845C207002E181C /* InternetConnectionManager.swift */; };
-		F86F9DFE2845C213002E181C /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86F9DFD2845C213002E181C /* ActivityIndicatorView.swift */; };
+		F86F9E002845C2BA002E181C /* UIImageView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86F9DFF2845C2BA002E181C /* UIImageView+Helper.swift */; };
 		F8ACAD4B25E8F4F0006CA0BA /* TTEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ACAD4A25E8F4F0006CA0BA /* TTEventCell.swift */; };
 		F8E169E225E7EF510009488B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E169E125E7EF510009488B /* AppDelegate.swift */; };
 		F8E169E425E7EF510009488B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E169E325E7EF510009488B /* SceneDelegate.swift */; };
@@ -29,9 +30,15 @@
 		F8E16A7A25E7F0200009488B /* Date+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E16A3B25E7F01F0009488B /* Date+Helper.swift */; };
 		F8E16A7C25E7F0200009488B /* String+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E16A3D25E7F01F0009488B /* String+Helper.swift */; };
 		F8E16A7E25E7F0200009488B /* UIAlertController+Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E16A3F25E7F01F0009488B /* UIAlertController+Show.swift */; };
+		F8E16A9125E7F0200009488B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E16A5825E7F0200009488B /* NetworkManager.swift */; };
+		F8E16AD325E7F2280009488B /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E16ACB25E7F2280009488B /* APIError.swift */; };
 		F8E16AD425E7F2280009488B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E16ACC25E7F2280009488B /* APIClient.swift */; };
+		F8E16AD525E7F2280009488B /* AFRequestMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E16ACD25E7F2280009488B /* AFRequestMonitor.swift */; };
+		F8E16AD625E7F2280009488B /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E16ACE25E7F2280009488B /* APIEndpoints.swift */; };
 		F8E16AD725E7F2280009488B /* NestableCodingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E16ACF25E7F2280009488B /* NestableCodingKey.swift */; };
+		F8E16AD825E7F2280009488B /* AFRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E16AD025E7F2280009488B /* AFRequestInterceptor.swift */; };
 		F8E16AD925E7F2280009488B /* URLPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E16AD125E7F2280009488B /* URLPaths.swift */; };
+		F8E16ADA25E7F2280009488B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E16AD225E7F2280009488B /* Endpoint.swift */; };
 		F8E16AE025E7F3710009488B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8E16ADF25E7F3710009488B /* Login.storyboard */; };
 		F8E16AE725E7F3920009488B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8E16AE625E7F3920009488B /* Main.storyboard */; };
 		F8E16AEC25E7F3A60009488B /* TTLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E16AEB25E7F3A60009488B /* TTLoginVC.swift */; };
@@ -69,12 +76,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C6892E49FD79A4E000EA7C4 /* Pods_TamoTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TamoTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C73C3CF5C08007F4B661404 /* Pods-TamoTaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamoTaskTests.release.xcconfig"; path = "Target Support Files/Pods-TamoTaskTests/Pods-TamoTaskTests.release.xcconfig"; sourceTree = "<group>"; };
+		43A8289347C4523744862DF6 /* Pods_TamoTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TamoTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46EB2BE1DC1A14EE9C41DDD1 /* Pods-TamoTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamoTaskTests.debug.xcconfig"; path = "Target Support Files/Pods-TamoTaskTests/Pods-TamoTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8926BC6DD7FAC825427181A8 /* Pods-TamoTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamoTask.release.xcconfig"; path = "Target Support Files/Pods-TamoTask/Pods-TamoTask.release.xcconfig"; sourceTree = "<group>"; };
+		952904B2B976181340969036 /* Pods_TamoTask_TamoTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TamoTask_TamoTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4C7C93FF7DC5182F4CF1ABB /* Pods-TamoTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamoTask.debug.xcconfig"; path = "Target Support Files/Pods-TamoTask/Pods-TamoTask.debug.xcconfig"; sourceTree = "<group>"; };
+		EBB6B26F0EACC109403ECEB7 /* Pods-TamoTask-TamoTaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamoTask-TamoTaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-TamoTask-TamoTaskUITests/Pods-TamoTask-TamoTaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F078DC7E20F0ABBE360603A9 /* Pods-TamoTask-TamoTaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TamoTask-TamoTaskUITests.release.xcconfig"; path = "Target Support Files/Pods-TamoTask-TamoTaskUITests/Pods-TamoTask-TamoTaskUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F82744C225E938E100C45053 /* DashedLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedLineView.swift; sourceTree = "<group>"; };
 		F82744C725E93E0A00C45053 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		F82744CC25E9835D00C45053 /* TTBlankEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTBlankEventCell.swift; sourceTree = "<group>"; };
-		F83D646925EAA73B00518F8B /* UIImageView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helper.swift"; sourceTree = "<group>"; };
-		F86F9DFB2845C207002E181C /* InternetConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InternetConnectionManager.swift; path = "../../../../TamoTask 2/TamoTaskWithoutPods/TamoTask/Utilities/InternetConnectionManager.swift"; sourceTree = "<group>"; };
-		F86F9DFD2845C213002E181C /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorView.swift; path = "../../../../TamoTask 2/TamoTaskWithoutPods/TamoTask/Utilities/ActivityIndicatorView.swift"; sourceTree = "<group>"; };
+		F86F9DFF2845C2BA002E181C /* UIImageView+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helper.swift"; sourceTree = "<group>"; };
 		F8ACAD4A25E8F4F0006CA0BA /* TTEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTEventCell.swift; sourceTree = "<group>"; };
 		F8E169DE25E7EF510009488B /* TamoTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TamoTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8E169E125E7EF510009488B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,9 +111,15 @@
 		F8E16A3B25E7F01F0009488B /* Date+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Helper.swift"; sourceTree = "<group>"; };
 		F8E16A3D25E7F01F0009488B /* String+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Helper.swift"; sourceTree = "<group>"; };
 		F8E16A3F25E7F01F0009488B /* UIAlertController+Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Show.swift"; sourceTree = "<group>"; };
+		F8E16A5825E7F0200009488B /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F8E16ACB25E7F2280009488B /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		F8E16ACC25E7F2280009488B /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		F8E16ACD25E7F2280009488B /* AFRequestMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFRequestMonitor.swift; sourceTree = "<group>"; };
+		F8E16ACE25E7F2280009488B /* APIEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		F8E16ACF25E7F2280009488B /* NestableCodingKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestableCodingKey.swift; sourceTree = "<group>"; };
+		F8E16AD025E7F2280009488B /* AFRequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFRequestInterceptor.swift; sourceTree = "<group>"; };
 		F8E16AD125E7F2280009488B /* URLPaths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLPaths.swift; sourceTree = "<group>"; };
+		F8E16AD225E7F2280009488B /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		F8E16ADF25E7F3710009488B /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		F8E16AE625E7F3920009488B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F8E16AEB25E7F3A60009488B /* TTLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLoginVC.swift; sourceTree = "<group>"; };
@@ -124,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72B8C2C62458980445B01377 /* Pods_TamoTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33B3F46919F896DDFC1ECF57 /* Pods_TamoTaskTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,12 +160,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0C556F922598A51D13A339 /* Pods_TamoTask_TamoTaskUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BC238D9A93DA118AFF7E72B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43A8289347C4523744862DF6 /* Pods_TamoTask.framework */,
+				952904B2B976181340969036 /* Pods_TamoTask_TamoTaskUITests.framework */,
+				1C6892E49FD79A4E000EA7C4 /* Pods_TamoTaskTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F5F5F6006147B61FE53B79C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4C7C93FF7DC5182F4CF1ABB /* Pods-TamoTask.debug.xcconfig */,
+				8926BC6DD7FAC825427181A8 /* Pods-TamoTask.release.xcconfig */,
+				EBB6B26F0EACC109403ECEB7 /* Pods-TamoTask-TamoTaskUITests.debug.xcconfig */,
+				F078DC7E20F0ABBE360603A9 /* Pods-TamoTask-TamoTaskUITests.release.xcconfig */,
+				46EB2BE1DC1A14EE9C41DDD1 /* Pods-TamoTaskTests.debug.xcconfig */,
+				3C73C3CF5C08007F4B661404 /* Pods-TamoTaskTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F8E169D525E7EF510009488B = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +197,8 @@
 				F8E169F725E7EF560009488B /* TamoTaskTests */,
 				F8E16A0225E7EF560009488B /* TamoTaskUITests */,
 				F8E169DF25E7EF510009488B /* Products */,
+				4F5F5F6006147B61FE53B79C /* Pods */,
+				1BC238D9A93DA118AFF7E72B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,13 +258,12 @@
 		F8E16A1E25E7F01F0009488B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F8E16A5825E7F0200009488B /* NetworkManager.swift */,
 				F82744C225E938E100C45053 /* DashedLineView.swift */,
 				F8E16B5725E8D28A0009488B /* CalendarManager.swift */,
 				F8E16A1F25E7F01F0009488B /* Constants.swift */,
 				F8E16A2125E7F01F0009488B /* TTAppHelper.swift */,
 				F8E16A2525E7F01F0009488B /* Helper.swift */,
-				F86F9DFB2845C207002E181C /* InternetConnectionManager.swift */,
-				F86F9DFD2845C213002E181C /* ActivityIndicatorView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -230,7 +277,7 @@
 				F8E16A3B25E7F01F0009488B /* Date+Helper.swift */,
 				F8E16A3D25E7F01F0009488B /* String+Helper.swift */,
 				F8E16A3F25E7F01F0009488B /* UIAlertController+Show.swift */,
-				F83D646925EAA73B00518F8B /* UIImageView+Helper.swift */,
+				F86F9DFF2845C2BA002E181C /* UIImageView+Helper.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,9 +285,14 @@
 		F8E16ACA25E7F2280009488B /* API Manager */ = {
 			isa = PBXGroup;
 			children = (
+				F8E16ACB25E7F2280009488B /* APIError.swift */,
 				F8E16ACC25E7F2280009488B /* APIClient.swift */,
+				F8E16ACD25E7F2280009488B /* AFRequestMonitor.swift */,
+				F8E16ACE25E7F2280009488B /* APIEndpoints.swift */,
 				F8E16ACF25E7F2280009488B /* NestableCodingKey.swift */,
+				F8E16AD025E7F2280009488B /* AFRequestInterceptor.swift */,
 				F8E16AD125E7F2280009488B /* URLPaths.swift */,
+				F8E16AD225E7F2280009488B /* Endpoint.swift */,
 			);
 			path = "API Manager";
 			sourceTree = "<group>";
@@ -397,9 +449,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8E16A0825E7EF560009488B /* Build configuration list for PBXNativeTarget "TamoTask" */;
 			buildPhases = (
+				3746423A5DA65BA84DE8643B /* [CP] Check Pods Manifest.lock */,
 				F8E169DA25E7EF510009488B /* Sources */,
 				F8E169DB25E7EF510009488B /* Frameworks */,
 				F8E169DC25E7EF510009488B /* Resources */,
+				9483FC594BD39DF358F1692D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -414,6 +468,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8E16A0B25E7EF560009488B /* Build configuration list for PBXNativeTarget "TamoTaskTests" */;
 			buildPhases = (
+				5653AC7FDBE8002C50F1A3E9 /* [CP] Check Pods Manifest.lock */,
 				F8E169F025E7EF560009488B /* Sources */,
 				F8E169F125E7EF560009488B /* Frameworks */,
 				F8E169F225E7EF560009488B /* Resources */,
@@ -432,9 +487,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8E16A0E25E7EF560009488B /* Build configuration list for PBXNativeTarget "TamoTaskUITests" */;
 			buildPhases = (
+				3318195B248238E4506298F4 /* [CP] Check Pods Manifest.lock */,
 				F8E169FB25E7EF560009488B /* Sources */,
 				F8E169FC25E7EF560009488B /* Frameworks */,
 				F8E169FD25E7EF560009488B /* Resources */,
+				BAF29B09D4099B78635A8FD5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -518,6 +575,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3318195B248238E4506298F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TamoTask-TamoTaskUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3746423A5DA65BA84DE8643B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TamoTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5653AC7FDBE8002C50F1A3E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TamoTaskTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9483FC594BD39DF358F1692D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TamoTask/Pods-TamoTask-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TamoTask/Pods-TamoTask-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TamoTask/Pods-TamoTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAF29B09D4099B78635A8FD5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TamoTask-TamoTaskUITests/Pods-TamoTask-TamoTaskUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TamoTask-TamoTaskUITests/Pods-TamoTask-TamoTaskUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TamoTask-TamoTaskUITests/Pods-TamoTask-TamoTaskUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F8E169DA25E7EF510009488B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -526,9 +686,14 @@
 				F8E16AEC25E7F3A60009488B /* TTLoginVC.swift in Sources */,
 				F82744C325E938E100C45053 /* DashedLineView.swift in Sources */,
 				F8E16AD925E7F2280009488B /* URLPaths.swift in Sources */,
+				F8E16AD525E7F2280009488B /* AFRequestMonitor.swift in Sources */,
+				F86F9E002845C2BA002E181C /* UIImageView+Helper.swift in Sources */,
 				F8E16AD725E7F2280009488B /* NestableCodingKey.swift in Sources */,
+				F8E16AD325E7F2280009488B /* APIError.swift in Sources */,
 				F8E16B1B25E809430009488B /* EventResponse.swift in Sources */,
 				F8E16B4C25E8D27F0009488B /* CalendarCollectionViewDataSource.swift in Sources */,
+				F8E16AD825E7F2280009488B /* AFRequestInterceptor.swift in Sources */,
+				F8E16A9125E7F0200009488B /* NetworkManager.swift in Sources */,
 				F8E16B2125E80B0C0009488B /* TTEventDetailsVC.swift in Sources */,
 				F8E16B0525E7FDAE0009488B /* TTLoginVM.swift in Sources */,
 				F8E169E225E7EF510009488B /* AppDelegate.swift in Sources */,
@@ -537,8 +702,6 @@
 				F8E16A6525E7F0200009488B /* Helper.swift in Sources */,
 				F8E16A7E25E7F0200009488B /* UIAlertController+Show.swift in Sources */,
 				F8E16B2925E80B190009488B /* EventDetailsResponse.swift in Sources */,
-				F86F9DFC2845C207002E181C /* InternetConnectionManager.swift in Sources */,
-				F83D646A25EAA73B00518F8B /* UIImageView+Helper.swift in Sources */,
 				F8E16A6C25E7F0200009488B /* Window+VisibleVC.swift in Sources */,
 				F8E16B4F25E8D27F0009488B /* CalendarCollectionViewFlowLayout.swift in Sources */,
 				F8E16A7C25E7F0200009488B /* String+Helper.swift in Sources */,
@@ -551,12 +714,13 @@
 				F8E16B0A25E7FE060009488B /* LoginResponse.swift in Sources */,
 				F8E16A6125E7F0200009488B /* TTAppHelper.swift in Sources */,
 				F82744CD25E9835D00C45053 /* TTBlankEventCell.swift in Sources */,
+				F8E16AD625E7F2280009488B /* APIEndpoints.swift in Sources */,
 				F8E16A7125E7F0200009488B /* UIStoryboard+Helper.swift in Sources */,
 				F8ACAD4B25E8F4F0006CA0BA /* TTEventCell.swift in Sources */,
 				F8E16B1625E804960009488B /* TTDashboardVM.swift in Sources */,
+				F8E16ADA25E7F2280009488B /* Endpoint.swift in Sources */,
 				F8E16A7425E7F0200009488B /* UIColor+Helper.swift in Sources */,
 				F8E16B5825E8D28A0009488B /* CalendarRange.swift in Sources */,
-				F86F9DFE2845C213002E181C /* ActivityIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,6 +885,7 @@
 		};
 		F8E16A0925E7EF560009488B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4C7C93FF7DC5182F4CF1ABB /* Pods-TamoTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -741,6 +906,7 @@
 		};
 		F8E16A0A25E7EF560009488B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8926BC6DD7FAC825427181A8 /* Pods-TamoTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -760,6 +926,7 @@
 		};
 		F8E16A0C25E7EF560009488B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46EB2BE1DC1A14EE9C41DDD1 /* Pods-TamoTaskTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -781,6 +948,7 @@
 		};
 		F8E16A0D25E7EF560009488B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C73C3CF5C08007F4B661404 /* Pods-TamoTaskTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -802,6 +970,7 @@
 		};
 		F8E16A0F25E7EF560009488B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBB6B26F0EACC109403ECEB7 /* Pods-TamoTask-TamoTaskUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -821,6 +990,7 @@
 		};
 		F8E16A1025E7EF560009488B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F078DC7E20F0ABBE360603A9 /* Pods-TamoTask-TamoTaskUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

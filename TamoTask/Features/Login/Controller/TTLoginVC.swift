@@ -14,18 +14,12 @@ class TTLoginVC: UIViewController {
     @IBOutlet weak private var loginBtn: UIButton!
     
     private let viewModel = TTLoginVM()
-    private var activityIndicatorView: ActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         style()
 
-    }
-    
-    private func setupIndicator(){
-        self.activityIndicatorView = ActivityIndicatorView(title: "Processing...", center: self.view.center)
-        self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
     }
     
     private func style(){
@@ -39,14 +33,7 @@ class TTLoginVC: UIViewController {
         guard let password = passwordFld.text else {return}
         
         if viewModel.isValid(email: email, password: password){
-            setupIndicator()
-            self.activityIndicatorView.startAnimating()
-            self.view.isUserInteractionEnabled = false
-            
-            viewModel.makeLogin(email: email, password: password) {(success) in
-                self.activityIndicatorView.stopAnimating()
-                self.view.isUserInteractionEnabled = true
-                
+            viewModel.makeLogin(email: email, password: password) { (success) in
                 if success{
                     RootVCHelper.setToDashboardVC()
                 }
